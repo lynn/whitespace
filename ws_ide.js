@@ -68,7 +68,7 @@ var ws_ide = (function () {
     for (var i in disasmSrc) {
       var ln = disasmSrc[i];
       var div = $('<div class="asmLine"></div>');
-      div.text(ln.str);
+      div.text(ln.str + (ln.IP != null ? ' (' + ln.IP + ')' : ''));
 
       if (ln.IP != null) {
         div.addClass('asmInstr');
